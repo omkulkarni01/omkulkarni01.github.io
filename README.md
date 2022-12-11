@@ -1,3 +1,4 @@
+<img align="right" width="100" height="100" src="https://github.com/omkulkarni01/AWR-Autonomous-Ground-Vehicles-for-Agriculture/blob/main/Simulation%20and%20Image%20processing%20Outputs/giphy%20(1).gif">
 <p align="center">
   <a href="https://www.yushi.dev/" target="_blank" rel="noreferrer"><img  width="1365"  src="https://user-images.githubusercontent.com/74231617/206864517-7d05fef2-da07-42f6-aab5-ae9b717758c0.PNG" alt="my banner"></a>
 </p>
