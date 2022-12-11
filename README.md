@@ -1,10 +1,9 @@
-  <img align="right" width="150" height="150" src="https://static.wixstatic.com/media/a5f0ad_e765aa92cbae4c42949526fb7803735f~mv2.gif">
- <p> <a href="https://www.yushi.dev/" target="_blank" rel="noreferrer"><img  width="1365"  src="https://user-images.githubusercontent.com/74231617/206864517-7d05fef2-da07-42f6-aab5-ae9b717758c0.PNG" alt="my banner"></a>
+ <p> <a href="https://omkulkarni01.github.io" target="_blank" rel="noreferrer"><img  width="1365"  src="https://user-images.githubusercontent.com/74231617/206864517-7d05fef2-da07-42f6-aab5-ae9b717758c0.PNG" alt="my banner"></a>
 </p>
 
 
 
-<h1 align="center">Hi 👋, I'm Om Kulkarni</h1>
+<h1 align="center">Hi 👋, I'm Om Kulkarni</h1>  <img align="right" width="150" height="150" src="https://static.wixstatic.com/media/a5f0ad_e765aa92cbae4c42949526fb7803735f~mv2.gif">
 <p align="center">
 <h3 align="center">Robotics and Space Technology Enthusiast from India</h3>
 <img align="right" alt="Robotics" width="280" src="https://i.pinimg.com/originals/50/38/f6/5038f6672f089f3a50c4f075feddfc42.gif">
