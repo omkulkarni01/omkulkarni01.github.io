@@ -13,15 +13,15 @@
 
 <p align="left"> <a href="https://www.linkedin.com/in/om-kulkarni-7685001b9/" target="blank"><img src="https://img.shields.io/badge/Connect Om Kulkarni-%230077B5.svg?style=for-the-badge&logo=linkedin&logoColor=white" alt="omkulkarni01" /></a> </p>
 
-<p>- 🔭 I’m currently working on various **autonomous robotics projects**</p>
+<p>- 🔭 I’m currently working on various <b>autonomous robotics projects</b></p>
 
-<p>- 🌱 I’m currently studying **Mechanical Engineering course at Pimpri Chinchwad College of Engineering,Pune**</p>
+<p>- 🌱 I’m currently studying <b>Mechanical Engineering course at Pimpri Chinchwad College of Engineering,Pune</b></p>
 
-<p>- 💬 Special Interest **Robotics, AIML, Aerospace engineering**</p>
+<p>- 💬 Special Interest <b>Robotics, AIML, Aerospace engineering</b></p>
 
-<p>- 📫 How to reach me **omkulkarni148@gmail.com**</p>
+<p>- 📫 How to reach me <b>om.kulkarni19@pccoepune.org</b></p>
 
-<p>- ⚡ Fun fact **Hobby of playing chess**:chess_pawn: **and cricket**	:cricket_game: **but like Stargazing** :telescope:</p>
+<p>- ⚡ Fun fact <b>Hobby of playing chess</b> :chess_pawn: <b>and cricket</b>	:cricket_game:<b> but like Stargazing</b> :telescope:</p>
 
 <h3 align="left">Connect with me:</h3>
 <p align="left">
