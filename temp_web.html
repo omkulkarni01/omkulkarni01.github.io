@@ -1,0 +1,201 @@
+<div id="updateModal" style="display: none; position: fixed; z-index: 9999; left: 0; top: 0; width: 100%; height: 100%; overflow: auto;
+background-color: rgba(0,0,0,0.6); font-family: 'Segoe UI', sans-serif;">
+
+  <div id="modalContent" class="slide-in" style="background-color: #fff; margin: 5% auto; padding: 30px; border: 1px solid #888;
+  width: 90%; max-width: 700px; border-radius: 16px; position: relative; box-shadow: 0 0 25px rgba(0,0,0,0.4); overflow: hidden;">
+
+    <span id="closeModal" style="color: #aaa; position: absolute; top: 10px; right: 20px; font-size: 28px; font-weight: bold; cursor: pointer;">&times;</span>
+
+    <!-- Character and dialogue -->
+    <div style="display: flex; align-items: flex-start; gap: 20px; flex-wrap: wrap;">
+      <img id="hostImage" src="Om_cartoon.png" alt="Quiz Host"
+        style="width: 220px; border-radius: 16px; box-shadow: 0 0 15px rgba(0,0,0,0.2); animation: bounce 2s infinite;">
+      <div style="flex: 1; min-width: 250px;">
+        <p id="typeDialogue" style="font-family: 'Times New Roman', serif; font-size: 1.4rem; font-weight: bold; min-height: 90px; transition: color 0.3s ease;" class="animated-text"></p>
+      </div>
+    </div>
+
+    <!-- Quiz container -->
+    <div id="spaceQuiz" style="margin-top: 25px; display: none;">
+      <p id="quizQuestion" style="font-weight: bold; font-size: 1.1rem;"></p>
+      <div id="quizOptions" style="margin-top: 10px;"></div>
+      <p id="quizFeedback" style="margin-top: 15px; font-weight: bold;"></p>
+      <a href="https://omkulkarni01.github.io/Test.html" id="proceedLink" style="display: none; margin-top: 15px; display: inline-block; color: #0ee0eb; font-weight: bold; text-decoration: none;">🚀 Continue to Older Site</a>
+    </div>
+
+    <!-- Footer: Contact and old site -->
+    <div style="margin-top: 40px; border-top: 1px solid #eee; padding-top: 20px;">
+      <h3>Contact Me</h3>
+      <form action="https://formspree.io/f/movwaqng" method="POST" onsubmit="alert('Thanks for reaching out! I'll get back to you soon.');">
+        <input type="text" name="name" placeholder="Your Name" required style="width: 100%; margin: 5px 0; padding: 8px;">
+        <input type="email" name="email" placeholder="Your Email" required style="width: 100%; margin: 5px 0; padding: 8px;">
+        <textarea name="message" placeholder="Your Message" required style="width: 100%; margin: 5px 0; padding: 8px;"></textarea>
+        <button type="submit" style="margin-top: 10px; padding: 10px 20px; background-color: #0ee0eb; border: none; color: #fff; border-radius: 6px; cursor: pointer;">Send Message</button>
+      </form>
+
+      <p style="margin-top: 15px;">Or visit the <a href="https://omkulkarni01.github.io/Test.html" id="olderVersionLink">older version</a> of the site.</p>
+    </div>
+  </div>
+</div>
+
+<!-- Styling -->
+<style>
+  .animated-text {
+    background: linear-gradient(to right,#222222, #000000);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: fadeIn 0.5s ease-in-out;
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(5px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  @keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+  }
+
+  @keyframes slideIn {
+    from { transform: translateY(-50px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+  }
+
+  .slide-in {
+    animation: slideIn 0.6s ease-out;
+  }
+
+  @media screen and (max-width: 500px) {
+    #modalContent {
+      width: 95% !important;
+      padding: 20px !important;
+    }
+    #hostImage {
+      width: 160px !important;
+    }
+    #typeDialogue {
+      font-size: 1.2rem !important;
+    }
+  }
+</style>
+
+<!-- Confetti & Script Logic -->
+<script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
+<script>
+  window.onload = function () {
+    const modal = document.getElementById('updateModal');
+    const closeBtn = document.getElementById('closeModal');
+    const olderLink = document.getElementById('olderVersionLink');
+    const quiz = document.getElementById('spaceQuiz');
+    const questionEl = document.getElementById('quizQuestion');
+    const optionsEl = document.getElementById('quizOptions');
+    const feedback = document.getElementById('quizFeedback');
+    const proceedLink = document.getElementById('proceedLink');
+    const dialogue = document.getElementById('typeDialogue');
+    const hostImage = document.getElementById('hostImage');
+
+    const questions = [
+      { question: "Which spacecraft is the farthest human-made object from Earth?", options: ["Apollo 11", "Voyager 1", "Hubble Telescope", "Mars Rover"], answer: "Voyager 1" },
+      { question: "What planet did the Perseverance rover land on in 2021?", options: ["Venus", "Mars", "Jupiter", "Saturn"], answer: "Mars" },
+      { question: "What is the name of the first satellite launched into space?", options: ["Sputnik 1", "Apollo 13", "Voyager 2", "Skylab"], answer: "Sputnik 1" },
+      { question: "Which telescope has captured the deepest images of space?", options: ["Spitzer", "Kepler", "Hubble", "James Webb"], answer: "James Webb" },
+      { question: "Which planet has the most moons?", options: ["Jupiter", "Neptune", "Saturn", "Uranus"], answer: "Saturn" }
+    ];
+
+    const messageSequence = [
+      "Hey, thanks for visiting my website.",
+      "The website is under update due to a career shift.",
+      "It will be ready by 08 June 2025.",
+      "If you have a bit of free time, let's try the space test!"
+    ];
+
+    let messageIndex = 0;
+    let typing = false;
+
+    function typeMessage(msg, callback) {
+      let i = 0;
+      typing = true;
+      dialogue.innerHTML = "";
+      const interval = setInterval(() => {
+        dialogue.innerHTML += msg[i++];
+        if (i >= msg.length) {
+          clearInterval(interval);
+          typing = false;
+          setTimeout(callback, 800);
+        }
+      }, 25);
+    }
+
+    function playIntroSequence() {
+      if (messageIndex < messageSequence.length) {
+        typeMessage(messageSequence[messageIndex++], playIntroSequence);
+      } else {
+        hostImage.style.animation = "none";
+        loadRandomQuestion();
+      }
+    }
+
+    function loadRandomQuestion() {
+      quiz.style.display = 'block';
+      feedback.textContent = '';
+      proceedLink.style.display = 'none';
+      optionsEl.innerHTML = '';
+
+      const random = questions[Math.floor(Math.random() * questions.length)];
+      questionEl.textContent = random.question;
+
+      random.options.forEach(option => {
+        const btn = document.createElement('button');
+        btn.textContent = option;
+        btn.className = 'quizOption';
+        btn.style.cssText = 'margin: 5px; padding: 10px 14px; border: 1px solid #0ee0eb; border-radius: 6px; background: #f9f9f9; cursor: pointer; font-weight: 500;';
+        btn.onclick = function () {
+          if (option === random.answer) {
+            feedback.style.color = 'green';
+            feedback.textContent = '✅ Correct! You can now proceed.';
+            proceedLink.style.display = 'inline-block';
+            confetti({ particleCount: 100, spread: 70, origin: { y: 0.6 } });
+          } else {
+            feedback.style.color = 'red';
+            feedback.textContent = `❌ Incorrect. The correct answer was "${random.answer}". Try again!`;
+          }
+        };
+        optionsEl.appendChild(btn);
+      });
+    }
+
+    function showIntroWithQuiz() {
+      if (typing) return;
+      quiz.style.display = 'none';
+      dialogue.innerHTML = '';
+      messageIndex = 0;
+      hostImage.style.animation = "bounce 2s infinite";
+      setTimeout(() => playIntroSequence(), 1000);
+    }
+
+    modal.style.display = 'block';
+    setTimeout(() => playIntroSequence(), 1000);
+
+    closeBtn.onclick = function (e) {
+      e.preventDefault();
+      showIntroWithQuiz();
+    };
+
+    modal.onclick = function (event) {
+      if (event.target === modal) {
+        showIntroWithQuiz();
+      }
+    };
+
+    olderLink.onclick = function (e) {
+      e.preventDefault();
+      showIntroWithQuiz();
+    };
+
+    proceedLink.onclick = function (e) {
+      e.preventDefault();
+      window.location.href = proceedLink.href;
+    };
+  };
+</script>
