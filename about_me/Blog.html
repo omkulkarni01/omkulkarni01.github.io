@@ -1,1 +1,152 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+  <meta name="keywords" content="Om, Kulkarni, PCCOE, Team Automatons,Mech,Robotics,ROS,Robot Operating System, Solidworks,algorithms, machine learning, artificial intelligence, " />
+  <meta name="author" content="Om Kulkarni">
+  <title>OM KULKARNI | Travel Blog</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Abril+Fatface|Arial" />
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      line-height: 1.6;
+      margin: 0;
+      padding: 0;
+      background: #f4f4f4;
+      color: #333;
+    }
+    header {
+      background: #222;
+      color: #fff;
+      padding: 20px 0;
+      text-align: center;
+    }
+    .container {
+      padding: 20px;
+      max-width: 1000px;
+      margin: auto;
+    }
+    .location {
+      background: #fff;
+      margin-bottom: 20px;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      transition: transform 0.3s, box-shadow 0.3s;
+      cursor: pointer;
+    }
+    .location:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 12px 24px rgba(0,0,0,0.2);
+    }
+    .location img {
+      max-width: 100%;
+      border-radius: 6px;
+    }
+    .location h2 {
+      margin-top: 0;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-family: 'Abril Fatface', cursive;
+      font-size: 1.5em;
+    }
+    .location h2 i {
+      font-size: 1.5rem;
+    }
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 1000;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      overflow: auto;
+      background-color: rgba(0,0,0,0.85);
+    }
+    .modal-content {
+      background: #fff;
+      margin: 5% auto;
+      padding: 20px;
+      border-radius: 10px;
+      max-width: 800px;
+      text-align: center;
+    }
+    .modal-content img {
+      width: 100%;
+      margin-bottom: 10px;
+      border-radius: 8px;
+    }
+    .close {
+      float: right;
+      font-size: 28px;
+      cursor: pointer;
+    }
+  </style>
+  <script>
+    function showGallery(city) {
+      const images = {
+        munich: ["./My%20images/Munich/Munich1.jpg", "./My%20images/Munich/Munich2.jpg"],
+        pune: ["your-uploaded-pune1.jpg", "your-uploaded-pune2.jpg"],
+        trivandrum: ["your-uploaded-trivandrum1.jpg", "your-uploaded-trivandrum2.jpg"],
+        ahmedabad: ["your-uploaded-ahmedabad1.jpg", "your-uploaded-ahmedabad2.jpg"]
+      };
+      const modal = document.getElementById("imageModal");
+      const container = document.getElementById("modalImages");
+      container.innerHTML = "";
+      images[city].forEach(src => {
+        const img = document.createElement("img");
+        img.src = src;
+        container.appendChild(img);
+      });
+      modal.style.display = "block";
+    }
+    function closeModal() {
+      document.getElementById("imageModal").style.display = "none";
+    }
+  </script>
+</head>
+<body>
 
+<header>
+  <h1>🌍 My Travel Blog</h1>
+  <p>Exploring the beauty of cities around the world</p>
+   <a href="../Test.html" style="display: inline-block; margin-top: 10px; padding: 10px 20px; background-color: #0ee0eb; color: #000; text-decoration: none; border-radius: 6px; font-weight: bold;">
+    ← Back to Main Website
+</header>
+
+<div class="container">
+  <div class="location" onclick="showGallery('munich')">
+    <h2><i>🍺</i> Munich, Germany</h2>
+    <p>Munich is known for its beautiful architecture, fine culture, and the annual Oktoberfest beer celebration. It’s one of Germany’s most historic and livable cities.</p>
+  </div>
+
+  <div class="location" onclick="showGallery('pune')">
+    <h2><i>🏙️</i> Pune, India</h2>
+    <p>Pune is a cultural hub of Maharashtra and is known for its educational institutions, IT parks, and vibrant history dating back to the Maratha empire.</p>
+  </div>
+
+  <div class="location" onclick="showGallery('trivandrum')">
+    <h2><i>🌴</i> Thiruvananthapuram, India</h2>
+    <p>Thiruvananthapuram, the capital of Kerala, is famous for its beaches, backwaters, and the magnificent Padmanabhaswamy Temple.</p>
+  </div>
+
+  <div class="location" onclick="showGallery('ahmedabad')">
+    <h2><i>🏛️</i> Ahmedabad, India</h2>
+    <p>Ahmedabad is a major city in Gujarat known for its rich history, bustling markets, and the Sabarmati Ashram founded by Mahatma Gandhi.</p>
+  </div>
+</div>
+
+<div id="imageModal" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="closeModal()">&times;</span>
+    <div id="modalImages"></div>
+  </div>
+</div>
+
+</body>
+</html>
