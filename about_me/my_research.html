@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1" />
+<title>My Own Research | Om Kulkarni</title>
+<link rel="stylesheet" href="https://www.mit.edu/~amini/assets/css/main.css?v=3" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Abril+Fatface" />
+<style>
+/* Page-specific styling */
+.topic-card {
+    background: rgba(255,255,255,0.05);
+    border-radius: 12px;
+    padding: 20px;
+    margin-bottom: 20px;
+    backdrop-filter: blur(6px);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+}
+.topic-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.5);
+}
+.topic-title {
+    font-family: 'Abril Fatface', cursive;
+    font-size: 1.8em;
+    color: #0ee0eb;
+    margin-bottom: 10px;
+}
+.topic-content {
+    display: none;
+    margin-top: 10px;
+}
+.topic-content ul {
+    list-style: disc;
+    padding-left: 20px;
+}
+.topic-content img {
+    margin-top: 10px;
+    width: 100%;
+    max-width: 300px;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0,0,0,0.3);
+}
+</style>
+</head>
+<body class="index home">
+<div class="loader"></div>
+<div id="sidebar">
+  <header>
+    <h1 class="site-title" style="text-align:center;"><a href="#">Om Kulkarni</a></h1>
+    <div style="text-align:center; font-size:1.2em">TU Munich | Aerospace</div>
+  </header>
+  <nav id="sidebar-nav-links">
+    <a class="home-link" href="../index.html">Home</a>
+    <a class="page-link active" href="my_research.html">My Research</a>
+  </nav>
+</div>
+<main class="container">
+  <div class="content">
+    <h1>My Research Domains</h1>
+
+    <!-- Orbital Robotics -->
+    <div class="topic-card" onclick="toggleTopic(this)">
+        <div class="topic-title">Orbital Robotics</div>
+        <div class="topic-content">
+            <p>Microgravity robotics, autonomous docking, orbital manipulation.</p>
+            <ul>
+                <li>Free-floating robotics dynamics</li>
+                <li>Visual navigation for docking</li>
+                <li>Orbital servicing operations</li>
+            </ul>
+            <img src="./images/orbital_robotics.jpg" alt="Orbital Robotics">
+        </div>
+    </div>
+
+    <!-- Plasma Propulsion -->
+    <div class="topic-card" onclick="toggleTopic(this)">
+        <div class="topic-title">Plasma Propulsion</div>
+        <div class="topic-content">
+            <p>Electric propulsion, Hall thrusters, plasma plume modeling.</p>
+            <ul>
+                <li>Hall Effect Thruster Physics</li>
+                <li>Ionization & plasma discharge</li>
+                <li>Electromagnetic acceleration</li>
+            </ul>
+            <img src="./images/plasma_thruster.jpg" alt="Plasma Propulsion">
+        </div>
+    </div>
+
+    <!-- Astrophysical Plasma -->
+    <div class="topic-card" onclick="toggleTopic(this)">
+        <div class="topic-title">Astrophysical Plasma</div>
+        <div class="topic-content">
+            <p>Plasma behavior in cosmic environments.</p>
+            <ul>
+                <li>Magnetohydrodynamics</li>
+                <li>Solar wind dynamics</li>
+                <li>Astrophysical instabilities</li>
+            </ul>
+            <img src="./images/astro_plasma.jpg" alt="Astrophysical Plasma">
+        </div>
+    </div>
+
+    <!-- Liquid Rocket Engines -->
+    <div class="topic-card" onclick="toggleTopic(this)">
+        <div class="topic-title">Liquid Rocket Engines</div>
+        <div class="topic-content">
+            <p>Fluid dynamics, injection systems, combustion modeling.</p>
+            <img src="./images/liquid_engine.jpg" alt="Liquid Rocket Engines">
+        </div>
+    </div>
+
+    <!-- Space Systems Development -->
+    <div class="topic-card" onclick="toggleTopic(this)">
+        <div class="topic-title">Space Systems Development</div>
+        <div class="topic-content">
+            <p>Satellite subsystems, mission design & systems engineering.</p>
+            <img src="./images/satellite_design.jpg" alt="Space Systems">
+        </div>
+    </div>
+
+    <!-- Core Robotics -->
+    <div class="topic-card" onclick="toggleTopic(this)">
+        <div class="topic-title">Core Robotics</div>
+        <div class="topic-content">
+            <p>Robotic kinematics, control, and perception algorithms.</p>
+            <img src="./images/robotics_core.jpg" alt="Core Robotics">
+        </div>
+    </div>
+
+    <!-- Composites -->
+    <div class="topic-card" onclick="toggleTopic(this)">
+        <div class="topic-title">Composites</div>
+        <div class="topic-content">
+            <p>Material behaviour, laminate theory & aerospace applications.</p>
+            <img src="./images/composites.jpg" alt="Composites">
+        </div>
+    </div>
+
+  </div>
+</main>
+<script>
+function toggleTopic(el) {
+    const content = el.querySelector('.topic-content');
+    if(content.style.display === 'block') {
+        content.style.display = 'none';
+    } else {
+        content.style.display = 'block';
+    }
+}
+</script>
+</body>
+</html>
