@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <title>Om Kulkarni</title>
+  <meta name="author" content="Om Kulkarni">
+  <meta name="keywords" content="Om Kulkarni, TUM, Aerospace, Robotics, ISRO, Mechanical Engineering">
+
+  <link rel="stylesheet" href="https://www.mit.edu/~amini/assets/css/main.css?v=3" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Abril+Fatface" />
+  <link rel="shortcut icon" href="./My%20images/favicon_new.ico" />
+  
+  <!-- Loader -->
+  <style>
+    .loader {
+      position: fixed; inset: 0;
+      display: flex; align-items: center; justify-content: center;
+      background: #333; transition: .75s;
+    }
+    .loader--hidden { opacity: 0; visibility: hidden; }
+    .loader::after {
+      content: "";
+      width: 75px; height: 75px;
+      border: 15px solid #ddd; border-top-color: #0ee0eb;
+      border-radius: 50%; animation: spin .75s linear infinite;
+    }
+    @keyframes spin { to { transform: rotate(360deg); } }
+  </style>
+
+  <script>
+    window.addEventListener("load", () => {
+      const loader = document.querySelector(".loader");
+      loader.classList.add("loader--hidden");
+      loader.addEventListener("transitionend", () => loader.remove());
+    });
+  </script>
+
+  <!-- Particle Background -->
+  <style>
+    #particles-js { height: 100vh; }
+    .pheader { position: absolute; inset: 0 0 0 0; z-index: -1; }
+  </style>
+</head>
+
+<body class="index home">
+<div class="loader"></div>
+
+<!-- Sidebar -->
+<div id="sidebar">
+  <header style="text-align:center;">
+    <h1 class="site-title"><a href="#">Om Kulkarni</a></h1>
+
+    <img src="./My%20images/Om_cartoon.png"
+         style="display:block;margin:0 auto;width:150px;height:150px;border-radius:50%;object-fit:cover;box-shadow:0 0 10px rgba(0,0,0,0.2);" />
+
+    <div style="font-size:1.2em;">TU Munich | Aerospace</div>
+  </header>
+
+  <nav id="sidebar-nav-links">
+    <a class="home-link active" href="#">Home</a>
+    <a class="page-link" href="./about_me/more_about.html">More about me</a>
+    <a class="page-link" href="./about_me/learnings.html">My Learnings</a>
+    <a class="page-link" href="./about_me/Blog.html">Blog</a>
+  </nav>
+
+  <br>
+
+  <!-- Social Icons -->
+  <div style="text-align:center;">
+    <a href="https://twitter.com/Om_A_Kulkarni" target="_blank">
+      <img src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/twitter.svg"
+           width="30">
+    </a>
+    <a href="https://www.linkedin.com/in/om-kulkarni-7685001b9/" target="_blank">
+      <img src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/linked-in-alt.svg"
+           width="30">
+    </a>
+    <a href="https://www.youtube.com/@gomechatronics8295/featured" target="_blank">
+      <img src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/youtube.svg"
+           width="30">
+    </a>
+    <a href="https://github.com/omkulkarni01" target="_blank">
+      <img src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/github.svg"
+           width="30">
+    </a>
+  </div>
+
+  <p>&copy; 2021. <a href="./others/license.MD">MIT License</a></p>
+</div>
+
+<!-- Particles -->
+<div class="pheader"><div id="particles-js"></div></div>
+<script src="https://www.mit.edu/~amini/particles.js"></script>
+
+<!-- Main Content -->
+<main class="container">
+<div class="content">
+
+  <img src="./My%20images/Om_Banner.jpeg" style="width:100%;border-radius:4px;">
+
+  <h1>Bio</h1>
+  <p style="font-family:'Times New Roman';">
+    I am an Aerospace Master's student at the 
+    <a href="https://www.tum.de/">Technical University of Munich (TUM)</a>.  
+    Previously, I completed my Bachelor's in  
+    <a href="https://mechanical.pccoepune.com/">Mechanical Engineering</a> at PCCOE Pune,  
+    with a minor in Systems Engineering.
+    <br><br>
+    My interests lie in robotics, control systems, and space technology. I enjoy chess,
+    and stargazing is my favorite free-time activity.  
+    <a href="./about_me/more_about.html">Know more about me</a>.
+    <br><br>
+    I’ve had opportunities to participate in competitions like 
+    Eyantra, Autodesk IDP, MathWorks Minidrone, and more.  
+    I also worked with the PCCOE robotics club 
+    <a href="https://teamautomatons.in/index.html">Team Automatons</a>,  
+    and gained valuable research experience at ISRO–SAC, Ahmedabad.  
+    More details are available <a href="./about_me/learnings.html">here</a>.
+  </p>
+
+  <!-- Blinking Message -->
+  <p id="blink" style="font-size:20px;font-weight:bold;">
+    Thank you for visiting! This website is currently being updated.
+    Please check back on <b>November 15, 2025</b> for refreshed content.
+  </p>
+
+  <script>
+    setInterval(() => {
+      blink.style.opacity = (blink.style.opacity == 0 ? 1 : 0);
+    }, 900);
+  </script>
+
+  <br><br>
+
+  <!-- Interactive Image Carousel -->
+  <style>
+    .image-carousel {
+      display: flex;
+      gap: 20px;
+      overflow-x: auto;
+      scroll-behavior: smooth;
+      padding: 10px;
+      border-radius: 10px;
+      scrollbar-width: thin;
+    }
+    .image-carousel img {
+      height: 160px;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: transform .3s;
+    }
+    .image-carousel img:hover {
+      transform: scale(1.07);
+    }
+    .image-carousel:hover {
+      animation-play-state: paused;
+    }
+  </style>
+
+  <h2>Achievements & Highlights</h2>
+
+  <div class="image-carousel">
+      <a href="./about_me/award1.jpg" target="_blank"><img src="./about_me/award1.jpg"></a>
+      <a href="./about_me/award2.jpg" target="_blank"><img src="./about_me/award2.jpg"></a>
+      <a href="./about_me/award3.jpg" target="_blank"><img src="./about_me/award3.jpg"></a>
+      <a href="./about_me/award4.jpg" target="_blank"><img src="./about_me/award4.jpg"></a>
+      <a href="./My images/Hall_ Effect_Thruster.JPG" target="_blank"><img src="./My images/Hall_ Effect_Thruster.JPG"></a>
+      <a href="./about_me/award5.jpg" target="_blank"><img src="./about_me/award5.jpg"></a>
+  </div>
+
+  <br>
+
+  Contact:  
+  <a href="mailto:omkulkarni148@gmail.com?subject=Message from website">omkulkarni148@gmail.com</a>
+
+</div>
+</main>
+
+</body>
+</html>
